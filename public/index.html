@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI Study Buddy</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&family=Kalam:wght@400;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="board">
+
+  <header class="board-header">
+    <h1 class="logo">AI Study Buddy</h1>
+    <p class="tagline">turn your notes into flashcards, a quiz, or a summary</p>
+  </header>
+
+  <div class="frame">
+    <span class="screw screw-tl" aria-hidden="true"></span>
+    <span class="screw screw-tr" aria-hidden="true"></span>
+    <span class="screw screw-bl" aria-hidden="true"></span>
+    <span class="screw screw-br" aria-hidden="true"></span>
+
+    <main class="desk" id="desk">
+
+      <section class="intake" id="intakeSection">
+        <label class="intake-label" for="notesInput">your notes</label>
+        <textarea
+          id="notesInput"
+          class="notes-paper"
+          placeholder="paste a textbook paragraph, lecture notes, an article — anything you need to learn"
+          rows="9"
+        ></textarea>
+
+        <div class="intake-row">
+          <button class="link-btn" id="exampleBtn" type="button">use example notes</button>
+          <span class="char-count" id="charCount">0 characters</span>
+        </div>
+
+        <div class="mode-row" role="radiogroup" aria-label="Study mode">
+          <button class="mode-tab" data-mode="flashcards" type="button" aria-pressed="true">flashcards</button>
+          <button class="mode-tab" data-mode="quiz" type="button" aria-pressed="false">quiz</button>
+          <button class="mode-tab" data-mode="summary" type="button" aria-pressed="false">summary</button>
+        </div>
+
+        <button class="generate-btn" id="generateBtn" type="button">
+          <span id="generateLabel">generate</span>
+        </button>
+
+        <p class="error-msg" id="errorMsg" role="alert"></p>
+      </section>
+
+      <section class="results" id="resultsSection" hidden>
+        <button class="back-btn" id="backBtn" type="button">back to notes</button>
+        <div id="resultsContent"></div>
+      </section>
+
+    </main>
+  </div>
+
+  <div class="marker-tray" aria-hidden="true">
+    <span class="marker marker-blue"></span>
+    <span class="marker marker-red"></span>
+    <span class="marker marker-green"></span>
+    <span class="marker marker-black"></span>
+  </div>
+
+  <footer class="board-footer">
+    <p>needs your own <a href="https://console.anthropic.com" target="_blank" rel="noopener">Anthropic API key</a> to run</p>
+  </footer>
+
+</div>
+
+<script src="app.js"></script>
+</body>
+</html>
