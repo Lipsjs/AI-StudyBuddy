@@ -1,6 +1,6 @@
 # AI Study Buddy
 
-Paste in notes — lecture notes, a textbook paragraph, an article, whatever — and get back flashcards, a multiple-choice quiz, or a summary.
+Paste in notes lecture notes, a textbook paragraph, an article, whatever and get back flashcards, a multiple-choice quiz, or a summary.
 
 ## What it does
 
